@@ -1120,3 +1120,158 @@ footer {
         padding: 2rem;
     }
 }
+
+/* =========================================
+   Portfolio Upgrades
+   ========================================= */
+
+/* Particles Background */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Project Images */
+.project-card {
+    padding: 0; /* Reset padding to 0 so image hits edges */
+    display: flex;
+    flex-direction: column;
+}
+.project-image-wrapper {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+    border-bottom: 1px solid var(--card-border);
+}
+.project-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.project-card:hover .project-img {
+    transform: scale(1.05);
+}
+.project-content {
+    padding: 2.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.project-content > div:last-child {
+    margin-top: auto !important; /* pushes links to bottom */
+}
+
+/* Contact Grid & Form */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+.contact-card:hover {
+    transform: translateY(-5px);
+}
+.contact-card i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+.contact-card h4 {
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+.contact-card a {
+    color: var(--text-secondary);
+    transition: color 0.3s;
+}
+.contact-card a:hover {
+    color: var(--text-primary);
+}
+
+.social-links-form {
+    display: flex;
+    gap: 1rem;
+}
+.social-links-form a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+.social-links-form a:hover {
+    background: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.contact-form-container {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+}
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: rgba(10, 15, 28, 0.5);
+    color: var(--text-primary);
+    font-family: var(--font-main);
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+.btn-submit {
+    width: 100%;
+    font-size: 1.1rem;
+    padding: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
