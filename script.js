@@ -88,11 +88,11 @@ if (typeof particlesJS !== 'undefined') {
     particlesJS('particles-js', {
         "particles": {
             "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-            "color": { "value": "#60a5fa" },
+            "color": { "value": "#06b6d4" },
             "shape": { "type": "circle" },
             "opacity": { "value": 0.35, "random": false },
             "size": { "value": 2.5, "random": true },
-            "line_linked": { "enable": true, "distance": 140, "color": "#8b5cf6", "opacity": 0.25, "width": 1 },
+            "line_linked": { "enable": true, "distance": 140, "color": "#2dd4bf", "opacity": 0.25, "width": 1 },
             "move": { "enable": true, "speed": 1.6, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
         },
         "interactivity": {
@@ -198,3 +198,34 @@ if (cursor && follower) {
         });
     });
 }
+
+// Project Filtering Logic
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
+
+filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Remove active class from all buttons
+        filterBtns.forEach(b => b.classList.remove('active'));
+        // Add active class to clicked button
+        btn.classList.add('active');
+        
+        const filterValue = btn.getAttribute('data-filter');
+        
+        projectCards.forEach(card => {
+            if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                card.classList.remove('hide');
+                // Small delay to allow display:block to apply before animating
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'scale(1)';
+                }, 10);
+            } else {
+                card.classList.add('hide');
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
+            }
+        });
+    });
+});
+

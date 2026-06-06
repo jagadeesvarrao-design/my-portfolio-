@@ -7,10 +7,10 @@
     --bg-secondary: #0b0f19; /* Secondary deep card-bg */
     --text-primary: #f9fafb;
     --text-secondary: #9ca3af;
-    --accent-color: #8b5cf6; /* Sleek violet */
+    --accent-color: #06b6d4; /* Sleek cyan */
     
-    /* Vibrant Neon Triple-Gradient */
-    --accent-gradient: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #d946ef 100%);
+    /* Ocean Glow Triple-Gradient */
+    --accent-gradient: linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #2dd4bf 100%);
     --card-bg: rgba(17, 24, 39, 0.45);
     --card-border: rgba(255, 255, 255, 0.06);
     
@@ -83,7 +83,7 @@ ul {
     background: var(--bg-primary);
 }
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(to bottom, #3b82f6, #8b5cf6, #d946ef);
+    background: linear-gradient(to bottom, #2563eb, #06b6d4, #2dd4bf);
     border-radius: 5px;
     border: 2px solid var(--bg-primary);
 }
@@ -592,8 +592,44 @@ ul {
 .skill-tools:hover .skill-tags span { background: rgba(245, 158, 11, 0.08); color: #fbbf24; border-color: rgba(245, 158, 11, 0.15); }
 
 /* =========================================
-   Projects Section
+   Projects Section & Filters
    ========================================= */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3.5rem;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 0.6rem 1.5rem;
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--text-primary);
+}
+
+.filter-btn.active {
+    background: var(--accent-gradient);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
+}
+
+.project-card.hide {
+    display: none;
+}
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
