@@ -1134,6 +1134,7 @@ footer {
 .delay-7 { transition-delay: 0.84s; }
 .delay-8 { transition-delay: 0.96s; }
 .delay-9 { transition-delay: 1.08s; }
+.delay-10 { transition-delay: 1.20s; }
 
 /* Responsive Media Queries */
 @media screen and (max-width: 992px) {
